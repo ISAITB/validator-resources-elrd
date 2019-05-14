@@ -1,0 +1,749 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited using XMLSpy v2019 rel. 3 (http://www.altova.com)  -->
+<!-- IMOLA Project ELRD Schema developed by IMOLA Technical Team  -->
+<xs:schema version="v3" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.1">
+	<xs:element name="ELRD">
+		<xs:annotation>
+			<xs:documentation>European Land Registry Document Element</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="frontPage">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="attachedDocuments">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="associatedInformation"/>
+										<xs:element name="supplementaryOfOfficialInformationDocument"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="disclaimers"/>
+							<xs:element name="objectOfDocument">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="dateOfIssue"/>
+										<xs:element name="issuingAuthorityDocument"/>
+										<xs:element name="landRegistryUnitIdentifier"/>
+										<xs:element name="timeOfIssue"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element ref="concession"/>
+							<xs:element name="pendingDocuments">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="landRegistryUnitIdentifier"/>
+										<xs:element name="pendingEntryNumber"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="typeOfDocument">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="officialDocument"/>
+										<xs:element name="unofficialDocument"/>
+										<xs:element ref="other"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="partA">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="landRegistryUnit">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="landRegistryUnitCadastralParcel"/>
+										<xs:element name="landRegistryUnitProperty">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="landRegistryUnitApartment">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="flat"/>
+																<xs:element name="flatQuota"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="landRegistryUnitSpecialProperty">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element ref="concession"/>
+																<xs:element name="water"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="landRegistryUnitPropertyRights">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="timeSharing"/>
+													<xs:element name="timeSharingUnit"/>
+													<xs:element name="timetable"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="landRegistryUnitBasics">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="identifier">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="cadastralParcelNumber"/>
+													<xs:element name="europeanLandRegistryIdentifier"/>
+													<xs:element name="inspireIdentifier"/>
+													<xs:element name="landRegistryNumber">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="matchBoxIdentifier">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="matchBuildingFlat"/>
+																			<xs:element name="matchLandRegistryUnit"/>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="location">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element ref="address"/>
+													<xs:element name="addressArea"/>
+													<xs:element name="addressId"/>
+													<xs:element name="adminUnitl1"/>
+													<xs:element name="adminUnitl2"/>
+													<xs:element name="fullAddress"/>
+													<xs:element name="geographicIdentifier"/>
+													<xs:element name="geographicName"/>
+													<xs:element name="geometry"/>
+													<xs:element name="locatorDesignator"/>
+													<xs:element name="locatorName"/>
+													<xs:element name="poBox"/>
+													<xs:element name="postCode"/>
+													<xs:element name="postName"/>
+													<xs:element name="thoroughfare"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="landRegistryUnitFeature">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="boundaries">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="cadastralBoundaries"/>
+													<xs:element name="landRegistryBoundaries"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="landCover">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="agricultureAreas"/>
+													<xs:element name="artificialSurfaces"/>
+													<xs:element name="forest"/>
+													<xs:element name="naturalAreas"/>
+													<xs:element name="waterBodies"/>
+													<xs:element name="wetlands"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="landUse">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="administrative"/>
+													<xs:element name="agriculturalUse"/>
+													<xs:element name="commercial"/>
+													<xs:element name="forestry"/>
+													<xs:element name="industrial"/>
+													<xs:element name="military"/>
+													<xs:element name="recreational"/>
+													<xs:element name="residential"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="publicLimitation">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="europeanUnionAgriculturePolicy"/>
+													<xs:element name="inlandWaters"/>
+													<xs:element name="landConsolidation"/>
+													<xs:element name="natura2000Net"/>
+													<xs:element ref="others"/>
+													<xs:element name="protectedSite"/>
+													<xs:element name="publicHousing"/>
+													<xs:element name="territorialSea"/>
+													<xs:element name="townPlanning"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="servitudeTenementLand">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="servitudeListAsServient">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="drainageAsServient"/>
+																<xs:element ref="powerline"/>
+																<xs:element ref="sewage"/>
+																<xs:element name="pipelineAsServient"/>
+																<xs:element ref="waterPassage"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="servitudesListAsDominant">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element ref="drainage"/>
+													<xs:element ref="fences"/>
+													<xs:element ref="lightAndViews"/>
+													<xs:element ref="lights"/>
+													<xs:element ref="partyWallsAndFences"/>
+													<xs:element ref="pipeline"/>
+													<xs:element ref="rightOfWay"/>
+													<xs:element ref="views"/>
+													<xs:element ref="waterServitude"/>
+													<xs:element name="wayleave"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="surface">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="localEquivalentMeasure"/>
+													<xs:element name="metricSystem"/>
+													<xs:element name="valueOfLandRegistryUnit">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="currency"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="partB">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="classOfTitle">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="absolute"/>
+										<xs:element name="firstRegistration"/>
+										<xs:element name="limited"/>
+										<xs:element name="provisionalRegistration"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="documentAsInstrument">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="authenticAct">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="dateInstrument"/>
+													<xs:element name="issuingAuthorityInstrument"/>
+													<xs:element name="locationIssuingAuthority"/>
+													<xs:element name="registerNumberInstrument"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="governmentalAct">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="dateGovernmental"/>
+													<xs:element name="issuingAuthorityGovernmental"/>
+													<xs:element name="locationGovernmental"/>
+													<xs:element name="registerNumberGovernmental"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="judicialDecision">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="dateJudicialDecision"/>
+													<xs:element name="issuingJudicialAuthority"/>
+													<xs:element name="locationJudicial"/>
+													<xs:element name="registerNumberJudicial"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="entitlement">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="barter">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element ref="price"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="donation">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="valueOfDonation"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="otherKindAcquisitionForValuableConsideration">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="priceOfAcquisition"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="otherKindAcquisitionNotForValuableConsideration">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="valueOfAcquisition"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="sale">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element ref="price"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="succession">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="valueOfSuccession"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="proprietor">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="pluralOwner"/>
+										<xs:element name="co-ownership">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="shares"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="jointOwnership"/>
+										<xs:element name="otherTypeOfCommunity"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="singleOwner">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="legalEntity">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element ref="address"/>
+													<xs:element name="alternativeName"/>
+													<xs:element name="businessAddress"/>
+													<xs:element name="businessLocation"/>
+													<xs:element name="companyActivity"/>
+													<xs:element name="companyStatus"/>
+													<xs:element name="companyType"/>
+													<xs:element name="legalIdentifier"/>
+													<xs:element name="legalName"/>
+													<xs:element name="registeredAddress"/>
+													<xs:element name="representative"/>
+													<xs:element name="taxPayerNumber"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="person">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element ref="address"/>
+													<xs:element name="alternativeName"/>
+													<xs:element name="birthname"/>
+													<xs:element name="citizenship"/>
+													<xs:element name="countryOfBirth"/>
+													<xs:element name="countryOfDeath"/>
+													<xs:element name="dateOfBirth"/>
+													<xs:element name="dateOfDeath"/>
+													<xs:element name="drivingLicense"/>
+													<xs:element name="familyName"/>
+													<xs:element name="fullName"/>
+													<xs:element name="gender"/>
+													<xs:element name="givenName"/>
+													<xs:element name="idIdentifier"/>
+													<xs:element name="personIdentifier"/>
+													<xs:element name="passport"/>
+													<xs:element name="patronimicName"/>
+													<xs:element name="placeOfBirth"/>
+													<xs:element name="placeOfDeath"/>
+													<xs:element name="residency"/>
+													<xs:element name="taxpayerId"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="restrictions">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="personalRestrictions">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="derivedFromInjunctions"/>
+													<xs:element name="derivedFromInsolvencyProcedure"/>
+													<xs:element name="derivedFromMatrimonialPropertyRegimeRules"/>
+													<xs:element name="fromEntitlement">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="condition">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="antecedent"/>
+																			<xs:element name="subsequent"/>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="reservationOfTitle"/>
+																<xs:element name="term"/>
+																<xs:element name="trust"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="title">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="bareOwnership"/>
+										<xs:element ref="concession"/>
+										<xs:element name="freehold"/>
+										<xs:element ref="others"/>
+										<xs:element name="ownership"/>
+										<xs:element name="possession"/>
+										<xs:element name="temporaryOwnership"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="partC">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="encumbrances">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="dateOfRegistration">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="judicialRestrictions">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="commonTemplateJudicialRestrictions">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="court"/>
+																			<xs:element ref="openingProcedureDate"/>
+																			<xs:element ref="procedureNumber"/>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="types">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="noticeOfInsolvencyProceeding"/>
+																			<xs:element name="noticeOfAttachment">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="amountClaimed"/>
+																						<xs:element name="assimilated">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="administrativeAttachment"/>
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="noticeOfDispute"/>
+																			<xs:element name="noticeOfEnforcement"/>
+																			<xs:element name="noticeOfForeclosure"/>
+																			<xs:element name="noticeOfForfeiture"/>
+																			<xs:element name="noticeOfProhibitionOfDisposal"/>
+																			<xs:element name="otherNotices">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="protectiveMeasure"/>
+																						<xs:element name="provisionaryMeasure"/>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="mortgages">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="creditAmount"/>
+																<xs:element name="dateOfDeed"/>
+																<xs:element name="deadlineOfCredit"/>
+																<xs:element name="deadlineOfMortgage"/>
+																<xs:element name="foreclosure">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element ref="openingProcedureDate"/>
+																			<xs:element ref="procedureNumber"/>
+																			<xs:element name="registrationNoticeDate"/>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="locationOfNotary"/>
+																<xs:element name="mortgagee"/>
+																<xs:element name="mortgagor"/>
+																<xs:element name="notary"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="otherEncumbrancesAndRestrictions">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="commonTemplateOtherEncumbrancesAndRestrictions">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element ref="procedureNumber"/>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="freeOfCharges"/>
+																<xs:element name="typesOtherEncumbrances">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="environmentalNotice"/>
+																			<xs:element name="expropriationProceedingNotice">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="expropriator"/>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="fiscalLiability"/>
+																			<xs:element name="neighbourBoundariesNotices"/>
+																			<xs:element name="planningNotice"/>
+																			<xs:element name="realCharge"/>
+																			<xs:element name="subsidyRefundRemarks"/>
+																			<xs:element name="taxationRemarks"/>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="propertyRights">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="anticrhesis"/>
+																			<xs:element name="callOption"/>
+																			<xs:element name="commercialLease"/>
+																			<xs:element name="emphyteusis"/>
+																			<xs:element name="grantRent"/>
+																			<xs:element name="groundRent"/>
+																			<xs:element name="habitatio"/>
+																			<xs:element name="lease"/>
+																			<xs:element name="preemptiveRight"/>
+																			<xs:element name="profit"/>
+																			<xs:element name="quasiUsufruct"/>
+																			<xs:element name="reversion"/>
+																			<xs:element name="rightToRecovery"/>
+																			<xs:element name="rightUseFamilyHome"/>
+																			<xs:element name="servitude">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element ref="drainage"/>
+																						<xs:element ref="fences"/>
+																						<xs:element ref="lightAndViews"/>
+																						<xs:element ref="lights"/>
+																						<xs:element ref="partyWallsAndFences"/>
+																						<xs:element ref="pipeline"/>
+																						<xs:element ref="powerline"/>
+																						<xs:element ref="rightOfWay"/>
+																						<xs:element ref="sewage"/>
+																						<xs:element ref="views"/>
+																						<xs:element ref="waterPassage"/>
+																						<xs:element ref="waterServitude"/>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="specialUseRight"/>
+																			<xs:element name="superficies"/>
+																			<xs:element name="useRight"/>
+																			<xs:element name="usufruct"/>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="interest">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="privateParties">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="beneficiary"/>
+																<xs:element name="deed"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="publicInterest">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="authority"/>
+																<xs:element name="procedure"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="others">
+		<xs:annotation>
+			<xs:documentation>Element to be reused</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="price">
+		<xs:annotation>
+			<xs:documentation>Element to be reused</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="address">
+		<xs:annotation>
+			<xs:documentation>Element to be reused</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="other">
+		<xs:annotation>
+			<xs:documentation>Element to be reused</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="concession">
+		<xs:annotation>
+			<xs:documentation>Element to be reused</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="openingProcedureDate">
+		<xs:annotation>
+			<xs:documentation> Element to be reused</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="procedureNumber">
+		<xs:annotation>
+			<xs:documentation> Element to be reused</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="powerline">
+		<xs:annotation>
+			<xs:documentation> Element to be reused</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="sewage">
+		<xs:annotation>
+			<xs:documentation> Element to be reused</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="waterPassage">
+		<xs:annotation>
+			<xs:documentation> Element to be reused</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="drainage">
+		<xs:annotation>
+			<xs:documentation> Element to be reused</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="fences">
+		<xs:annotation>
+			<xs:documentation> Element to be reused</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="lightAndViews">
+		<xs:annotation>
+			<xs:documentation> Element to be reused</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="lights">
+		<xs:annotation>
+			<xs:documentation> Element to be reused</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="partyWallsAndFences">
+		<xs:annotation>
+			<xs:documentation> Element to be reused</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="pipeline">
+		<xs:annotation>
+			<xs:documentation> Element to be reused</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="rightOfWay">
+		<xs:annotation>
+			<xs:documentation> Element to be reused</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="views">
+		<xs:annotation>
+			<xs:documentation> Element to be reused</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="waterServitude">
+		<xs:annotation>
+			<xs:documentation> Element to be reused</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>
